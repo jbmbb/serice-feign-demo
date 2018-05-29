@@ -5,7 +5,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "service-hello1")
+import com.xxlai.sericefeigndemo.service.impl.SchedualServiceHelloHystric;
+
+/**
+ * feign负载均衡器
+ * fallback指定熔断后执行类
+ * @author xxlai
+ *
+ */
+@FeignClient(value = "service-hello1",fallback=SchedualServiceHelloHystric.class)
 public interface SchedualServiceHello {
 	
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)

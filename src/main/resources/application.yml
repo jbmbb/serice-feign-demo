@@ -4,6 +4,13 @@ server:
 spring:
   application:
     name: service-hello3
+    
+#feign.hystrix.enabled=true
+management:
+  endpoint:
+    hystrix:
+      stream:
+        enabled: true
   
 eureka:
   client:
