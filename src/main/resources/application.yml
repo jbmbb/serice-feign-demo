@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: service-hello3
+    name: service-feign
     
 #feign.hystrix.enabled=true
 management:
